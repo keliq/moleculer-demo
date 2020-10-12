@@ -1,0 +1,7 @@
+const path = require('path')
+const { ServiceBroker } = require('moleculer')
+const options = require('./moleculer.config')
+const broker = new ServiceBroker(options)
+const ApiService = require('moleculer-web')
+broker.createService(ApiService)
+broker.start().catch((e) => console.error(e))
